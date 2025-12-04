@@ -6,7 +6,7 @@ with open("data/dev.json") as f:
 subset = dev[:1200]
 
 # Save to new file
-with open("1200devTestSet.json", "w") as f:
+with open("restricted_data/1200devTestSet.json", "w") as f:
     json.dump(subset, f, indent=4)
 
 print("Saved 1200 entries to 1200devTestSet.json")
