@@ -28,6 +28,11 @@ def process_single_entry(entry):
         "question": question,
         "gold_answer": gold_answer,
         "predicted_answer": predicted_answer,
+        # this is just an example for the context id of an oracle, ideally we would save in separate
+        # files for the different experiments
+        # the id and stuff for the contexts used will be the ones of the docs from the corpus when retrieving
+        # type will also be changed to negative, relative, oracle depending on the experiment step
+        # the k refers to the top-k relevance and then we have some other stuff for ratio and model for note keeping
         "contexts_used": [
             {"doc_id": idx, "type": "oracle", "text": ctx}
             for idx, ctx in enumerate(contexts)
