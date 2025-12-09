@@ -1,0 +1,7 @@
+torch
+transformers
+faiss-cpu
+tensorboard
+boto3
+sentence-transformers
+langchain-ollama
