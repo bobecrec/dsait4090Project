@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 from typing import Dict, List, Any
 
-from dexter.config.constants import Split
 
 from src.retrieval.contriever_retrieval import run_contriever
 from src.generative_model_setup import generate_answer

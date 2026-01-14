@@ -1,3 +1,4 @@
 dexter-cqa
 anthropic
 matplotlib
+

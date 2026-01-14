@@ -13,9 +13,8 @@ def run_contriever(k_retrieval: int = 10):
       corpus:  dict[doc_id -> {title, text, ...}]
       results: dict[qid -> list[(doc_id, score)]]
     """
-    print(split)
     loader = RetrieverDataset(
-        "wikimultihopqa",  # dataset alias
+        "wikimultihopqa",         # dataset alias
         "wikimultihopqa-corpus",  # corpus alias
         "config.ini",
         Split.DEV,
@@ -23,6 +22,8 @@ def run_contriever(k_retrieval: int = 10):
     )
 
     queries, qrels, corpus = loader.qrels()
+
+
     cfg = DenseHyperParams(
         query_encoder_path="facebook/contriever",
         document_encoder_path="facebook/contriever",
@@ -46,12 +47,15 @@ def run_contriever(k_retrieval: int = 10):
     return queries, qrels, corpus, results
 
 
-# if __name__ == "__main__":
-#     queries, qrels, corpus, results = run_contriever(Split.DEV, k_retrieval=5)
-#     for i, (qid, qtext) in enumerate(queries.items()):
-#         if i >= 3:
-#             break
-#         print(f"\nQID: {qid}")
-#         print("Q:", qtext)
-#         for doc_id, score in results[qid][:3]:
-#             print(f"  DOC {doc_id} (score={score:.3f}) :: {corpus[doc_id]['title']}")
+
+if __name__ == "__main__":
+    queries, qrels, corpus, results = run_contriever(k_retrieval=5)
+    for i, (qid, qtext) in enumerate(queries.items()):
+        if i >= 3:
+            break
+        print(f"\nQID: {qid}")
+        print("Q:", qtext)
+        for doc_id, score in results[qid][:3]:
+            print(f"  DOC {doc_id} (score={score:.3f}) :: {corpus[doc_id]['title']}")
+
+

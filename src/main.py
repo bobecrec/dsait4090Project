@@ -5,6 +5,7 @@ from src.experiments.exp_adore_retriever import run_adore_topk
 from src.experiments.exp_baseline_topk import run_baseline_topk, run_all_ks
 
 
+from src.experiments.exp_baseline_topk import run_all_ks, run_baseline_topk
 # you can import other experiments: (this is only for the first bulletpoint)
 # from src.experiments.exp_random_negatives import run_random_negatives
 # from src.experiments.exp_hard_negatives import run_hard_negatives
@@ -43,3 +44,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
