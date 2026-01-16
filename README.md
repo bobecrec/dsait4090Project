@@ -54,3 +54,10 @@ From the course Google Drive, download: dev.json and wiki_musique_corpus.json
 
 There is a known issue with HfRetriever - it returns a cuda-related error. 
 I had to replace all cuda instances with .cpu / .device instances. For this purpose, I created the `[HfRetriever-copy.py](src/retrieval/HfRetriever-copy.py)`. If you have the same errors when following the onboarding guide, please copy that code in the official HfRetriever.py file.
+
+## Adore Training and Model
+To execute the training and running of ADORE, move all the data related files into a folder called `raw_data` including the `dev.json`, `train.json`, `corpus.json` files.
+additionally, you would require the memmap embeddings and different preprocessings needed for the training setup, which can be obtained by running the `adore_preprocessing` file. Just make sure all the names of the files are the correct ones in your structure.
+You would also require the DRHard repository for running the training based on the embeddings. Please refer to this repository: link[https://github.com/jingtaozhan/DRhard]
+Once you have run successfully the preprocessing, you may use the train commands from the mentioned above repository for ADORE, not ADORE-STAR, to obtain epochs of the model and then to use the respective path to the model you desire to run the downstream task from main.
+
