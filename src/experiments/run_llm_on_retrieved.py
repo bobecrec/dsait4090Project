@@ -10,6 +10,7 @@ This script:
 """
 
 import json
+
 import random
 from pathlib import Path
 from typing import Dict, List, Any

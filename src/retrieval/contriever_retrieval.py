@@ -23,6 +23,7 @@ def run_contriever(k_retrieval: int = 10):
 
     queries, qrels, corpus = loader.qrels()
 
+
     cfg = DenseHyperParams(
         query_encoder_path="facebook/contriever",
         document_encoder_path="facebook/contriever",
@@ -44,6 +45,7 @@ def run_contriever(k_retrieval: int = 10):
     )
 
     return queries, qrels, corpus, results
+
 
 
 if __name__ == "__main__":
